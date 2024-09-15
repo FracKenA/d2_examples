@@ -1,0 +1,89 @@
+subscription.vnet.aks.class:subnet
+subscription.vnet.aks {
+    label: ${name}-AKS-Subnet
+    grid-rows: 2
+    grid-gap: 3
+}
+
+subscription.vnet.aks.subnet_items: "" {
+    grid-columns: 2
+    grid-gap:0
+    style {
+        opacity: 0
+    }
+    route_table.class:route_table
+    route_table.label: ${name}-AKS-RT
+    network_security_group.class:network_security_group
+    network_security_group.label: ${name}-AKS-NSG
+}
+
+subscription.vnet.vm.class: subnet
+subscription.vnet.vm {
+    label: ${name}-VM-Subnet
+    grid-rows: 2
+    grid-gap: 3
+}
+
+
+subscription.vnet.vm.subnet_items: "" {
+    grid-columns: 2
+    grid-gap:0
+    style {
+        opacity: 0
+    }
+    route_table.class:route_table
+    route_table.label: ${name}-VM-RT
+    network_security_group.class:network_security_group
+    network_security_group.label: ${name}-VM-NSG
+}
+
+subscription.vnet.vm.virtual_machines: "" {
+    grid-columns: 2
+    grid-gap:0
+    style {
+        opacity: 0
+    }
+    task_controller.class:virtual_machine
+    task_controller.label: ${name}-Task-Controller
+
+    sql_vm_1.class:sql_virtual_machine
+    sql_vm_1.label: ${name}-SQL-Server-1
+
+    sql_vm_2.class:sql_virtual_machine
+    sql_vm_2.label: ${name}-SQL-Server-2
+
+    sql_vm_3.class:sql_virtual_machine
+    sql_vm_3.label: ${name}-SQL-Server-3
+}
+
+subscription.vnet.paas.class: subnet
+subscription.vnet.paas {
+    label: ${name}-PaaS-Subnet
+    grid-rows: 2
+    grid-gap: 3
+}
+
+subscription.vnet.paas.subnet_items: "" {
+    grid-columns: 2
+    grid-gap:0
+    style {
+        opacity: 0
+    }
+    route_table.class:route_table
+    route_table.label: ${name}-VM-RT
+    network_security_group.class:network_security_group
+    network_security_group.label: ${name}-VM-NSG
+}
+
+subscription.vnet.paas.subnet_items: "" {
+    grid-columns: 2
+    grid-gap:0
+    style {
+        opacity: 0
+    }
+    key_vault.class:key_vault
+    key_vault.label: ${name}-Key-Vault
+
+    storage_account.class: storage_account
+    storage_account.label: ${name}-Storage-Account
+}
